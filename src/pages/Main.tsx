@@ -2,6 +2,9 @@ import ButtonContact from '../atoms/ButtonContact';
 import Frontend from '../templates/frontend'
 import * as S from './Styles'
 
+import HeroHeaderImage from '../assets/hero-header-image.png'
+import CardActivity from '../molecules/CardActivity';
+
 
 
 function Main() {
@@ -12,9 +15,12 @@ function Main() {
       <div>
         <h1>Design driven development of your web products</h1>
         <h6>We are a full service digital agency that builds immesive user experience.</h6>
-        <ButtonContact></ButtonContact>
+        <ButtonContact />
       </div>
-      <div>Coluna 2</div>
+      <S.ColumnImage>
+        <CardActivity />
+        <img src={HeroHeaderImage} alt="Uma mulher fazendo pesquisa no tablet" />         
+      </S.ColumnImage>
     </S.Container>
         
   </Frontend>

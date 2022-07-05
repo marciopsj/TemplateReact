@@ -21,4 +21,13 @@ export const Container = styled.div`
         padding-right: 150px;
         margin-top: 25px;
     }
-`
+`;
+
+export const ColumnImage = styled.div`
+    text-align: right;
+    position: relative;
+
+    img {
+        margin-left: 108px;
+    }
+`;
