@@ -4,6 +4,7 @@ import * as S from './Styles'
 
 import HeroHeaderImage from '../assets/hero-header-image.png'
 import CardActivity from '../molecules/CardActivity';
+import CardStats from '../molecules/CardStats';
 
 
 
@@ -19,6 +20,7 @@ function Main() {
       </div>
       <S.ColumnImage>
         <CardActivity />
+        <CardStats />
         <img src={HeroHeaderImage} alt="Uma mulher fazendo pesquisa no tablet" />         
       </S.ColumnImage>
     </S.Container>

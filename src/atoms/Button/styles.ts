@@ -10,8 +10,10 @@ export const Container = styled.button`
     border-radius: 4px;
     transition: all 0.25s ease-out;
     
+    
     &:hover {
         color: #fff;
         background-color: #17A4D0;
+       
     }
 `
