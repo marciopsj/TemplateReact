@@ -4,6 +4,7 @@ import {CgArrowLongRight} from 'react-icons/cg';
 
 
 const CardStats = () => {
+    const amountBars = Array.from(Array(12).keys());     
     return (
         <S.Container>
             <div> 
@@ -12,7 +13,10 @@ const CardStats = () => {
                 <CgArrowLongRight />
             </div>
 
-            <S.Chart>teste</S.Chart>            
+            <S.Chart>{amountBars.map((item) => (
+                <span>{item + 1}</span>
+            ))}
+            </S.Chart>            
         </S.Container>
 
     );
