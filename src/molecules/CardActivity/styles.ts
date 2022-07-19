@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     position: absolute;
-    top: 105px;
+    
     left: 65px;
     background-color: #DAAAFF;
     color: #fff;
@@ -12,6 +12,10 @@ export const Container = styled.div`
     text-align: left;
     padding: 11px;
     overflow: hidden;
+
+    animation: showCard 0.5s linear forwards;
+    top: 75px;
+    opacity: 0;
 
     small {
         font-size: 15px;
@@ -57,6 +61,14 @@ export const Container = styled.div`
         }
         
         
+    }
+
+    @keyframes showCard {
+
+        to {
+            top: 105px;
+            opacity: 1;
+        }
     }
     
 ` 

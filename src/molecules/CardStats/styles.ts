@@ -3,13 +3,17 @@ import styled from "styled-components";
 export const Container = styled.div`
     position: absolute;
     background-color: #FFFFFF;
-    bottom: 0;
+    
     left: 30px;
     width: 210px;
     height: 210px;    
     border-radius: 18px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    padding: 33.6px 24.5px;
+    padding: 20px;
+
+    animation: showOnPage 0.5s linear forwards;
+    opacity: 0;
+    bottom: -30px;
 
     > div {
         display: flex;
@@ -21,9 +25,68 @@ export const Container = styled.div`
         }
     }
 
+    @keyframes showOnPage {      
+
+        to {
+            opacity: 1;
+            bottom: 0;
+        }
+    }
+
     
 `;
 
+function generateBars () {
+    const amountBars = [...Array(12).keys()]; 
+    let styleBars: any = [];
+
+    amountBars.forEach(item => {
+        styleBars.push(`
+            div:nth-child(${item + 1}) {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+
+                div{
+                    background-color: #EFF3FE;
+                    height: 91px;
+                    width: 2.1px;
+                    border-radius: 5px;
+                    display: flex;
+                    justify-content: flex-end;
+                    span { 
+                        display: block;
+                        background-color: #5236FF;
+                        height: 0px;
+                        animation: animationHeight 1s linear forwards;
+                        max-height: ${Math.ceil(Math.random() * 100)}px;
+                        width: 3.5px;
+                        border-radius: 5px;
+                    }
+                }
+
+                small {
+                    color: #BACCFD;
+                    font-size: 10px; 
+                    margin-top: 10px;
+                }
+            }
+        `)        
+    });
+
+    return styleBars.join("");
+}
+
 export const Chart = styled.div`
     margin-top: 28px;
+
+    ${generateBars()}
+
+    @keyframes animationHeight {
+        
+        to {
+            height: 91px; 
+        }
+    }    
 `;
